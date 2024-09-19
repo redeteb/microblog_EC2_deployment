@@ -5,3 +5,4 @@ app/**/__pycache__/
 app/translations/**/*.mo
 logs/
 migrations/**/__pycache__/
+READMEx.md
