@@ -49,7 +49,13 @@ pipeline {
       stage ('Deploy') {
             steps {
                 sh '''#!/bin/bash
-                <enter your code here>
+                source venv/bin/activate
+                sudo /bin/systemctl restart gunicorn
+                if sudo /bin/systemctl is-active --quiet gunicorn; then
+                    echo "Gunicorn restarted successfully"
+                else
+                    echo "Failed to restart Gunicorn"
+                  fi
                 '''
             }
         }
